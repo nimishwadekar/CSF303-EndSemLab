@@ -1,0 +1,6 @@
+netsim/Cargo.lock
+netsim/target
+.vscode
+user/src/_background/encrlog_c
+user/log
+user/bin

@@ -1,0 +1,230 @@
+[
+    {
+        "send_link": 1,
+        "send_packet": {
+            "src": 21, "dest": 183, "ttl": 15, "type": "data", "flags": [], "seq_no": 12,
+            "payload": "some example payload"
+        },
+        "recv_link": 3,
+        "recv_packet": {
+            "ttl": 14
+        },
+        "msg": "Data Routing"
+    },
+
+    {
+        "send_link": 2,
+        "send_packet": {
+            "src": 75, "dest": 150, "ttl": 2, "type": "data", "flags": [], "seq_no": 64,
+            "payload": [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+        },
+        "msg": "Data routing with missing subnet address in routing table"
+    },
+
+    {
+        "send_link": 0,
+        "send_packet": {
+            "src": 8, "dest": 12, "ttl": 14, "type": "cmd", "flags": [], "seq_no": 1,
+            "payload": {
+                "entry_count": 3, "timestamp": 10004, "entries": [
+                    [2, 0], [3, 2], [45, 17]
+                ]
+            }
+        },
+        "msg": "Command handling without table update"
+    },
+
+    {
+        "send_link": 0,
+        "send_packet": {
+            "src": 10, "dest": 182, "ttl": 8, "type": "data", "flags": [], "seq_no": 567,
+            "payload": [1, 2, 3, 4, 5, 6, 7, 8]
+        },
+        "recv_link": 3,
+        "recv_packet": {
+            "ttl": 7
+        },
+        "msg": "Data routing"
+    },
+
+    {
+        "send_link": 2,
+        "send_packet": {
+            "src": 93, "dest": 21, "ttl": 4, "type": "data", "flags": [], "seq_no": 1622,
+            "payload": "some example payload"
+        },
+        "checksum": 34,
+        "msg": "Handling Invalid checksum"
+    },
+
+    {
+        "send_link": 1,
+        "send_packet": {
+            "src": 20, "dest": 12, "ttl": 14, "type": "cmd", "flags": [], "seq_no": 1,
+            "payload": {
+                "entry_count": 3, "timestamp": 44444, "entries": [
+                    [3, 3], [5, 0], [23, 4]
+                ]
+            }
+        },
+        "recv_link": "all",
+        "recv_packet": [
+            { "src": 12, "dest": 8, "payload": { "entry_count": 6, "timestamp": 44444, "entries": [ [2, 2], [3, 0], [5, 3], [18, 2], [23, 7], [45, 11] ]} },
+            { "src": 12, "dest": 20, "payload": { "entry_count": 6, "timestamp": 44444, "entries": [ [2, 2], [3, 0], [5, 3], [18, 2], [23, 7], [45, 11] ]} },
+            { "src": 12, "dest": 72, "payload": { "entry_count": 6, "timestamp": 44444, "entries": [ [2, 2], [3, 0], [5, 3], [18, 2], [23, 7], [45, 11] ]} },
+            { "src": 12, "dest": 180, "payload": { "entry_count": 6, "timestamp": 44444, "entries": [ [2, 2], [3, 0], [5, 3], [18, 2], [23, 7], [45, 11] ]} }
+        ],
+        "msg": "Command handling with table update and broadcast"
+    },
+
+    {
+        "send_link": 3,
+        "send_packet": {
+            "src": 182, "dest": 93, "ttl": 10, "type": "data", "flags": [], "seq_no": 45,
+            "payload": "abcdefghijklmnopqrstuvwxyz"
+        },
+        "recv_link": 1,
+        "recv_packet": {
+            "ttl": 9
+        },
+        "msg": "Data routing"
+    },
+
+    {
+        "send_link": 1,
+        "send_packet": {
+            "src": 21, "dest": 9, "ttl": 1, "type": "data", "flags": [], "seq_no": 3672,
+            "payload": "0123456789"
+        },
+        "msg": "Handling TTL"
+    },
+
+    {
+        "send_link": 1,
+        "send_packet": {
+            "src": 95, "dest": 14, "ttl": 6, "type": "data", "flags": [], "seq_no": 765,
+            "payload": "John Lennon"
+        },
+        "recv_link": 1,
+        "recv_packet": {
+            "src": 14, "dest": 95, "ttl": 14, "type": "data", "flags": ["ACK"], "seq_no": 766,
+            "payload": "Hello John Lennon"
+        },
+        "msg": "Data routing to and from application"
+    },
+
+    {
+        "send_link": 2,
+        "send_packet": {
+            "src": 72, "dest": 12, "ttl": 14, "type": "cmd", "flags": [], "seq_no": 1,
+            "payload": {
+                "entry_count": 5, "timestamp": 128777, "entries": [
+                    [2, 6], [3, 2], [18, 0], [45, 4], [60, 15]
+                ]
+            }
+        },
+        "recv_link": "all",
+        "recv_packet": [
+            { "src": 12, "dest": 8, "payload": { "entry_count": 7, "timestamp": 128777, "entries": [ [2, 2], [3, 0], [5, 3], [18, 2], [23, 7], [45, 6], [60, 17] ]} },
+            { "src": 12, "dest": 20, "payload": { "entry_count": 7, "timestamp": 128777, "entries": [ [2, 2], [3, 0], [5, 3], [18, 2], [23, 7], [45, 6], [60, 17] ]} },
+            { "src": 12, "dest": 72, "payload": { "entry_count": 7, "timestamp": 128777, "entries": [ [2, 2], [3, 0], [5, 3], [18, 2], [23, 7], [45, 6], [60, 17] ]} },
+            { "src": 12, "dest": 180, "payload": { "entry_count": 7, "timestamp": 128777, "entries": [ [2, 2], [3, 0], [5, 3], [18, 2], [23, 7], [45, 6], [60, 17] ]} }
+        ],
+        "msg": "Command handling with table update and broadcast"
+    },
+
+    {
+        "send_link": 1,
+        "send_packet": {
+            "src": 93, "dest": 181, "ttl": 12, "type": "data", "flags": [], "seq_no": 3,
+            "payload": "random payload"
+        },
+        "recv_link": 2,
+        "recv_packet": {
+            "ttl": 11
+        },
+        "msg": "Data routing"
+    },
+
+    {
+        "send_link": 1,
+        "send_packet": {
+            "src": 23, "dest": 9, "ttl": 2, "type": "data", "flags": [], "seq_no": 196,
+            "payload": [99, 88, 77, 66, 55, 44, 33]
+        },
+        "recv_link": 0,
+        "recv_packet": {
+            "ttl": 1
+        },
+        "msg": "Data routing"
+    },
+
+    {
+        "send_link": 2,
+        "send_packet": {
+            "src": 74, "dest": 14, "ttl": 8, "type": "data", "flags": [], "seq_no": 2453,
+            "payload": "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij"
+        },
+        "msg": "Packet too large for application"
+    },
+
+    {
+        "send_link": 0,
+        "send_packet": {
+            "src": 8, "dest": 12, "ttl": 14, "type": "cmd", "flags": [], "seq_no": 1,
+            "payload": {
+                "entry_count": 4, "timestamp": 450556, "entries": [
+                    [2, 0], [3, 2], [23, 6], [45, 1]
+                ]
+            }
+        },
+        "recv_link": "all",
+        "recv_packet": [
+            { "src": 12, "dest": 8, "payload": { "entry_count": 7, "timestamp": 450556, "entries": [ [2, 2], [3, 0], [5, 3], [18, 2], [23, 7], [45, 3], [60, 17] ]} },
+            { "src": 12, "dest": 20, "payload": { "entry_count": 7, "timestamp": 450556, "entries": [ [2, 2], [3, 0], [5, 3], [18, 2], [23, 7], [45, 3], [60, 17] ]} },
+            { "src": 12, "dest": 72, "payload": { "entry_count": 7, "timestamp": 450556, "entries": [ [2, 2], [3, 0], [5, 3], [18, 2], [23, 7], [45, 3], [60, 17] ]} },
+            { "src": 12, "dest": 180, "payload": { "entry_count": 7, "timestamp": 450556, "entries": [ [2, 2], [3, 0], [5, 3], [18, 2], [23, 7], [45, 3], [60, 17] ]} }
+        ],
+        "msg": "Command handling with table update and broadcast"
+    },
+
+    {
+        "send_link": 1,
+        "send_packet": {
+            "src": 93, "dest": 181, "ttl": 5, "type": "data", "flags": [], "seq_no": 345,
+            "payload": "random payload random payload random payload"
+        },
+        "recv_link": 0,
+        "recv_packet": {
+            "ttl": 4
+        },
+        "msg": "Data routing"
+    },
+
+    {
+        "send_link": 0,
+        "send_packet": {
+            "src": 183, "dest": 14, "ttl": 14, "type": "data", "flags": [], "seq_no": 1174,
+            "payload": "Insert Random Name"
+        },
+        "recv_link": 0,
+        "recv_packet": {
+            "src": 14, "dest": 183, "ttl": 14, "type": "data", "flags": ["ACK"], "seq_no": 1175,
+            "payload": "Hello Insert Random Name"
+        },
+        "msg": "Data routing to and from application"
+    },
+
+    {
+        "send_link": 1,
+        "send_packet": {
+            "src": 20, "dest": 12, "ttl": 14, "type": "cmd", "flags": [], "seq_no": 1,
+            "payload": {
+                "entry_count": 3, "timestamp": 283700, "entries": [
+                    [3, 3], [5, 0], [23, 2]
+                ]
+            }
+        },
+        "msg": "Outdated command timestamp"
+    }
+]
